@@ -15,3 +15,7 @@ View the webpage on `localhost:5000` or `127.0.0.1:5000`.
 ## Customization
 You can also tweak the appearance by changing the files `image1` and `image2` in `static/media`. Make sure to  
 keep the names of the file(s) unchanged.
+
+## Preview
+If all goes well, the home screen is supposed to look like this.  
+![ss](https://github.com/srdg/Localtunes/blob/master/static/media/homescreen.png "Sample homescreen")
