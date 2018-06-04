@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Local tunes</title>
+	<style type="text/css">
+
+		body {
+			background-image: url("{{url_for('static',filename='media/image2.jpg')}}");
+			background-size: 100% 100%;
+		}
+		
+		p {
+			padding-left: 10px;
+		}
+
+		#playlist {
+			background-color: deepskyblue;
+			max-height: 50px;
+			max-width: 400px;
+			overflow: auto;
+			border-radius: 10px;
+			margin-left: 45%;
+			background-image: url("{{url_for('static',filename='media/image1.jpg')}}");
+		}
+
+		#header {
+			text-align: center;
+			color: deepskyblue;
+		}
+
+		#image1 {
+			position: absolute;
+			margin-top: 50px;
+			margin-left: 70%;
+			width: 300px;
+			height: 400px;
+		}
+
+		#ins {
+			position: absolute;
+			max-width: 30%;
+			color: white;
+			margin-top: 17%;
+			padding-left: 3%;
+			padding-right: 3%;
+			text-align: left;
+			margin-left: 5%;
+			border: 1px solid white;
+		}
+
+		.fadein{
+    	-webkit-animation: 2s ease 0s normal forwards 1 fadein;
+    	animation: 2s ease 0s normal forwards 1 fadein;
+		}
+
+		@keyframes fadein{
+    		0% { opacity:0; }
+    		46% { opacity:0.5; }
+    		100% { opacity:1; }
+		}
+
+		@-webkit-keyframes fadein{
+    		0% { opacity:0; }
+    		46% { opacity:0.5; }
+    		100% { opacity:1; }
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="header">
+	<h1>Welcome to Localtunes!</h1>
+	<h4>Your very own offline web-based music player. Don't download an audio player ever again.</h4>
+	</div>
+	<div id="ins" class="fadein"><h1>Load more songs into the /static/music folder, and see the magic.</h1>
+		<p><a target="_blank" href="https://www.github.com/srdg/Localtunes"> View on Github.</a></p></div>
+	<img id="image1" src="{{url_for('static',filename='media/image1.jpg')}}">
+	<div id="enc">
+	{% for song_url in url_music %}
+	<div id="playlist">
+
+	<p>{{ song_url[6:-4]}}</p>
+	<audio controls="controls">
+		<source src="{{ url_for('static',filename=song_url) }}" type="audio/mpeg">
+	</audio>
+	<hr>
+	</div>
+	{% endfor %}
+	</div>
+</body>
+</html>
