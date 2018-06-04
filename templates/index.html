@@ -6,13 +6,25 @@
 
 		body {
 			background-image: url("{{url_for('static',filename='media/image2.jpg')}}");
+			background-position: center;
 			background-size: 100% 100%;
+
 		}
 		
 		p {
 			padding-left: 10px;
 		}
 
+		a:hover{
+			color: white;
+			opacity: 0.5;
+		}
+		a:clicked {
+			color: cyan;
+		}
+		a {
+			color:yellow;
+		}
 		#playlist {
 			background-color: deepskyblue;
 			max-height: 50px;
@@ -64,6 +76,15 @@
     		46% { opacity:0.5; }
     		100% { opacity:1; }
 		}
+
+		button {
+			padding: 10px 10px 10px 10px;
+			font-size: 30px;
+			color: white;
+			background: transparent; 
+			margin-bottom: 10px;
+			font: sans-serif;
+		}
 	</style>
 </head>
 <body>
@@ -72,8 +93,12 @@
 	<h1>Welcome to Localtunes!</h1>
 	<h4>Your very own offline web-based music player. Don't download an audio player ever again.</h4>
 	</div>
-	<div id="ins" class="fadein"><h1>Load more songs into the /static/music folder, and see the magic.</h1>
-		<p><a target="_blank" href="https://www.github.com/srdg/Localtunes"> View on Github.</a></p></div>
+	<div id="ins" class="fadein"><h1>I had to cook this up, because, why not?</h1>
+		<p>Credit for songs goes to <a href="bensounds.com">Bensounds</a>.<br>
+			<br><a target="_blank" href="https://www.github.com/srdg/Localtunes"> View on Github.</a></p>
+		<br>
+		<a href="https://github.com/srdg/Localtunes/blob/master/README.md#usage"><button>Wondering how to use?</button></a>
+	</div>
 	<img id="image1" src="{{url_for('static',filename='media/image1.jpg')}}">
 	<div id="enc">
 	{% for song_url in url_music %}
@@ -87,5 +112,7 @@
 	</div>
 	{% endfor %}
 	</div>
+
 </body>
+<footer| Made in 2018.</footer>
 </html>
