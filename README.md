@@ -1,5 +1,5 @@
 # Localtunes
-An offline web based music app.
+An offline browser based music app.
 
 Don't ever download a music player again. You just need to have a browser.
 
